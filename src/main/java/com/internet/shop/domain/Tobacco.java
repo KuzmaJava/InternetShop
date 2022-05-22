@@ -4,24 +4,24 @@ import java.util.Objects;
 
 public class Tobacco {
 
-    private int id;
+    private Long id;
     private String brand;
     private String flavour;
     private String country;
     private int grams;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
     public Tobacco() {
     }
 
-    public Tobacco(int id, String brand, String flavour, String country, int grams) {
+    public Tobacco(Long id, String brand, String flavour, String country, int grams) {
         this.id = id;
         this.brand = brand;
         this.flavour = flavour;

@@ -1,11 +1,18 @@
 package com.internet.shop.domain;
 
-import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity(name = "coal")
 public class Coal {
-
-    private int id;
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
     private String brand;
+    @Column(name = "cube_size")
     private double cubeSize;
     private String country;
     private double price;
@@ -13,7 +20,7 @@ public class Coal {
     public Coal() {
     }
 
-    public Coal(int id, String brand, double cubeSize, String country, double price) {
+    public Coal(Long id, String brand, double cubeSize, String country, double price) {
         this.id = id;
         this.brand = brand;
         this.cubeSize = cubeSize;
@@ -21,11 +28,11 @@ public class Coal {
         this.price = price;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
