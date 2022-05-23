@@ -1,19 +1,29 @@
 package com.internet.shop.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name = "hookah")
 public class Hookah {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
     private String brand;
-    private String country;
     private double height;
+    private String country;
+    @Column(name = "flask_volume")
     private double flaskVolume;
     private double price;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -60,7 +70,7 @@ public class Hookah {
     public Hookah() {
     }
 
-    public Hookah(int id, String brand, String country, double height, double flaskVolume, double price) {
+    public Hookah(Long id, String brand, String country, double height, double flaskVolume, double price) {
         this.id = id;
         this.brand = brand;
         this.country = country;
